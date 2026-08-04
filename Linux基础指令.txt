@@ -1,0 +1,108 @@
+目录查看与切换
+
+pwd          # 查看当前所在路径
+ls           # 列出当前目录文件
+ls -l        # 详细列表（权限、大小、时间）
+ls -a        # 显示隐藏文件
+ls -lh       # 人性化显示文件大小
+cd /xxx      # 进入指定目录
+cd ~         # 回到家目录
+cd ..        # 返回上一级目录
+cd -         # 回到上一次所在目录
+
+
+2. 文件夹创建 / 删除 / 移动 / 复制
+
+mkdir test        # 创建文件夹test
+mkdir -p a/b/c    # 递归创建多级目录
+rmdir test        # 删除空文件夹
+rm file.txt       # 删除文件
+rm -rf test       # 强制删除文件夹（谨慎使用！）
+cp a.txt b.txt    # 复制文件
+cp -r dir1 dir2   # 复制文件夹
+mv old new        # 移动/重命名文件/文件夹
+
+
+3. 文件查看、创建、编辑
+
+touch test.txt    # 创建空文件
+cat test.txt      # 一次性查看全部文件内容
+more test.txt     # 分页查看（空格翻页）
+less test.txt     # 增强分页查看（上下键滚动）
+head -10 test.txt # 查看前10行
+tail -10 test.txt # 查看末尾10行
+tail -f test.txt  # 实时监控文件更新（日志）
+vim test.txt      # vim编辑器
+nano test.txt     # 简易编辑器
+
+
+二、文件权限 & 用户
+
+chmod 755 file    # 修改文件权限
+chown user:group file  # 修改文件归属用户/组
+whoami            # 查看当前登录用户
+useradd test      # 添加用户（root）
+passwd test       # 设置用户密码
+su root           # 切换root用户
+sudo 命令         # 临时以管理员执行命令
+
+
+三、查找与搜索
+
+find / -name "*.log"  # 全盘搜索后缀log文件
+grep "关键词" test.txt # 文件内匹配关键词
+grep -r "xxx" ./      # 递归搜索当前目录所有文件
+
+
+四、压缩解压
+
+# tar打包解压
+tar -zcvf 打包名.tar.gz 目录/文件  # 压缩
+tar -zxvf 打包名.tar.gz            # 解压
+# zip
+zip -r test.zip ./test
+unzip test.zip
+
+
+五、系统信息、进程、服务
+
+uname -r        # 查看内核版本
+hostname        # 主机名
+df -h           # 磁盘分区使用情况
+free -h         # 内存使用
+top             # 实时进程资源占用
+htop            # 可视化进程（需安装）
+ps aux          # 查看所有进程
+kill -9 PID     # 强制杀死进程
+systemctl start nginx  # 启动服务
+systemctl stop nginx   # 停止服务
+systemctl enable nginx # 开机自启
+
+
+六、网络命令
+
+ip addr         # 查看网卡IP（替代ifconfig）
+ping baidu.com  # 测试网络连通
+curl 网址        # 访问网页
+wget 网址        # 下载文件
+netstat -tulnp  # 查看端口占用
+ss -tulnp       # 新版端口查看
+
+
+七、管道、重定向
+
+ls -l | grep txt    # 管道：过滤输出
+echo "内容" > a.txt # 覆盖写入文件
+echo "内容" >> a.txt# 追加写入文件
+
+
+八、开关机、其他基础
+
+clear        # 清屏
+history      # 查看历史执行命令
+reboot       # 重启系统
+shutdown -h now # 立刻关机
+Tab		#自动补齐
+Ctrl + C 	#终止当前运行程序
+Ctrl + L 	#清屏
+!! 		#重复执行上一条命令

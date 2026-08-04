@@ -1,0 +1,40 @@
+git init	//在当前文件夹加入git(初始化)
+git status	//查看状态
+
+.git ignore		//忽略文件
+.gitkeep		//保留空白文件
+
+//把工作区内容启动到暂存区
+git add xx.txt	//添加文件到暂存区
+git add xx/		//添加文件夹到暂存区
+git add .		//添加当下文件夹所有文件到暂存区
+
+
+//把放在暂存区的内容在拉回到工作区
+git reset head -- xx.txt	//某个文件
+				  xx/		//某个文件夹
+				  .			//全部
+
+//把暂存区内容保存到历史区
+git commit -m "该历史版本名字"
+git log		//查看当前版本线的历史版本信息 	
+
+//版本回退
+git reset --hard +版本信息的commit	
+git reset --hard head^		//回退到上个版本	
+
+git reflog		//查看看所有的版本信息变化
+
+
+
+
+上传操作：
+git push -u origin main		//第一次要有“-u”
+							//main为要推送的分支	
+//后面只需要进行下面的操作
+git push	//上传
+git pull	//下载
+
+
+下载操作：
+git clone 地址		//克隆操作
